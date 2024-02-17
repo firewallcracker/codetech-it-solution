@@ -49,3 +49,54 @@ This document reports a SQL Injection vulnerability identified within a web appl
 ## Conclusion
 
 This report highlights a critical SQL Injection vulnerability that requires immediate attention. Addressing this vulnerability is essential for maintaining the integrity, confidentiality, and availability of the application's data. Implementing the recommendations provided herein will significantly reduce the risk associated with this vulnerability.
+
+
+
+
+
+
+
+To clearly explain the process of capturing HTTP website username and password using Wireshark, including a demonstration with a POST request, you can structure your README document on GitHub as follows. This structure not only makes the information accessible but also educates the reader on how sensitive information can be exposed over unencrypted connections.
+
+---
+# task 4(sniffing using wireshark)
+# Capturing HTTP Website Username & Password Using Wireshark
+
+## Overview
+
+This document outlines how to capture a username and password sent over an unencrypted HTTP connection using Wireshark, a popular network protocol analyzer. By intercepting HTTP traffic, one can see the data being transmitted in plain text, highlighting the importance of using encrypted connections (HTTPS) for transmitting sensitive information.
+
+## Example Scenario
+
+In this example, we demonstrate capturing a login POST request to `http://testphp.vulnweb.com`. The user attempts to log in with their credentials, which are transmitted over an unencrypted HTTP connection.
+
+### HTTP POST Request Breakdown
+
+When a user submits their login information, the browser sends an HTTP POST request to the server. Here's a breakdown of the captured request:
+
+- **Method & URL**: `POST /userinfo.php HTTP/1.1` - This indicates a POST request made to the `/userinfo.php` resource.
+- **Host**: `testphp.vulnweb.com` - The domain where the request is being sent.
+- **Content-Length**: `45` - The length of the request body.
+- **Content-Type**: `application/x-www-form-urlencoded` - The format of the data in the request body, indicating form data.
+- **Body**: `uname=piyush%21%40gmail.com&pass=password4577` - The submitted username and password, URL encoded.
+
+### Analysis
+
+In the request body, the username (`uname`) and password (`pass`) are clearly visible:
+
+- **Username**: `piyush%!@gmail.com` (URL decoded)
+- **Password**: `password4577`
+
+This demonstrates how easily sensitive information can be captured if transmitted over an unencrypted connection.
+
+### Security Implications
+
+Capturing usernames and passwords is trivial on unencrypted HTTP connections, posing a significant security risk. Attackers can exploit such vulnerabilities on unsecured networks (e.g., public WiFi) to gain unauthorized access to user accounts.
+
+## Mitigation
+
+To prevent sensitive information from being exposed, always ensure:
+
+1. **Use HTTPS**: Secure your website with HTTPS to encrypt data in transit.
+2. **Secure Forms**: Ensure login forms are submitted over HTTPS endpoints.
+3. **Educate Users**: Inform users about the risks of using unsecured networks for transmitting sensitive information.
