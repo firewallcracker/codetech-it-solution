@@ -1,4 +1,4 @@
-#  Capturing HTTP website username & password using Wireshark
+#Capturing HTTP website username & password using Wireshark
 
 POST /userinfo.php HTTP/1.1
 Host: testphp.vulnweb.com
