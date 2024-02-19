@@ -1,0 +1,34 @@
+### check for open ports and vulnerbale service
+
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-02-19 01:37 EST
+Nmap scan report for testphp.vulnweb.com (44.228.249.3)
+Host is up (0.26s latency).
+rDNS record for 44.228.249.3: ec2-44-228-249-3.us-west-2.compute.amazonaws.com
+Not shown: 998 filtered tcp ports (no-response), 1 filtered tcp ports (host-unreach)
+PORT   STATE SERVICE
+80/tcp open  http
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/showimage.php?file=%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/artists.php?artist=1%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/artists.php?artist=2%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/artists.php?artist=3%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/listproducts.php?cat=4%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/listproducts.php?cat=2%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/listproducts.php?cat=3%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/listproducts.php?cat=1%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|     http://testphp.vulnweb.com:80/search.php?test=query%27%20OR%20sqlspider
+|_    http://testphp.vulnweb.com:80/showimage.php?file=%27%20OR%20sqlspider
+
+Nmap done: 1 IP address (1 host up) scanned in 89.80 seconds
